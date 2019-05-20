@@ -13,7 +13,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DXSample.Properties;
-
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DXSample {
     public partial class Main: XtraForm {
@@ -27,6 +27,7 @@ namespace DXSample {
             gridView1.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(gridView1_CustomRowCellEditForEditing);
             gridView1.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
         }
+
 
         void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e) {
             if(e.Column.FieldName == "LargeImage") {
@@ -68,7 +69,7 @@ namespace DXSample {
         }
 
         private void OnFormLoad(object sender, EventArgs e) {
-            this.ordersTableAdapter.Fill(this.nwindDataSet.Orders);
+            gridControl1.DataSource = DataHelper.CreateTable();
         }
     }
 }

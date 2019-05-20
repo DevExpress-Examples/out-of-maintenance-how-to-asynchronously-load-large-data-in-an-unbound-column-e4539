@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -12,7 +11,6 @@ Imports System.Threading
 Imports System.Runtime.Remoting.Messaging
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.Skins
-Imports DXSample.Properties
 Imports DevExpress.LookAndFeel
 
 Namespace DXSample

@@ -34,18 +34,13 @@ namespace DXSample {
             this.components = new System.ComponentModel.Container();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nwindDataSet = new DXSample.nwindDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colOrderID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmployeeID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFreight = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colShipName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ordersTableAdapter = new DXSample.nwindDataSetTableAdapters.OrdersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +50,6 @@ namespace DXSample {
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.ordersBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
@@ -64,16 +58,6 @@ namespace DXSample {
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.nwindDataSet;
-            // 
-            // nwindDataSet
-            // 
-            this.nwindDataSet.DataSetName = "nwindDataSet";
-            this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -122,10 +106,6 @@ namespace DXSample {
             this.colShipName.Visible = true;
             this.colShipName.VisibleIndex = 4;
             // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,8 +117,6 @@ namespace DXSample {
             this.Text = "AsyncLoading";
             this.Load += new System.EventHandler(this.OnFormLoad);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -149,9 +127,6 @@ namespace DXSample {
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private nwindDataSet nwindDataSet;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
-        private DXSample.nwindDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderID;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeID;
