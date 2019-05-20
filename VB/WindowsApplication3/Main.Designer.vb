@@ -6,9 +6,6 @@
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E3140
 
-
-Imports Microsoft.VisualBasic
-Imports System
 Namespace DXSample
 	Partial Public Class Main
 		''' <summary>
@@ -37,18 +34,13 @@ Namespace DXSample
 			Me.components = New System.ComponentModel.Container()
 			Me.defaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
-			Me.ordersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.nwindDataSet = New DXSample.nwindDataSet()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			Me.colOrderID = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colCustomerID = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colEmployeeID = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colFreight = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colShipName = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.ordersTableAdapter = New DXSample.nwindDataSetTableAdapters.OrdersTableAdapter()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.ordersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
@@ -58,7 +50,6 @@ Namespace DXSample
 			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.ordersBindingSource
 			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.gridControl1.MainView = Me.gridView1
@@ -66,16 +57,6 @@ Namespace DXSample
 			Me.gridControl1.Size = New System.Drawing.Size(910, 290)
 			Me.gridControl1.TabIndex = 0
 			Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
-			' 
-			' ordersBindingSource
-			' 
-			Me.ordersBindingSource.DataMember = "Orders"
-			Me.ordersBindingSource.DataSource = Me.nwindDataSet
-			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' gridView1
 			' 
@@ -119,10 +100,6 @@ Namespace DXSample
 			Me.colShipName.Visible = True
 			Me.colShipName.VisibleIndex = 4
 			' 
-			' ordersTableAdapter
-			' 
-			Me.ordersTableAdapter.ClearBeforeFill = True
-			' 
 			' Main
 			' 
 			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
@@ -132,10 +109,9 @@ Namespace DXSample
 			Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
 			Me.Name = "Main"
 			Me.Text = "AsyncLoading"
-'			Me.Load += New System.EventHandler(Me.OnFormLoad);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.OnFormLoad);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.ordersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
@@ -146,9 +122,6 @@ Namespace DXSample
 		Private defaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
 		Private gridControl1 As DevExpress.XtraGrid.GridControl
 		Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-		Private nwindDataSet As nwindDataSet
-		Private ordersBindingSource As System.Windows.Forms.BindingSource
-		Private ordersTableAdapter As DXSample.nwindDataSetTableAdapters.OrdersTableAdapter
 		Private colOrderID As DevExpress.XtraGrid.Columns.GridColumn
 		Private colCustomerID As DevExpress.XtraGrid.Columns.GridColumn
 		Private colEmployeeID As DevExpress.XtraGrid.Columns.GridColumn
